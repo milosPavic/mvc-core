@@ -60,7 +60,7 @@ class Database
         if (function_exists('db')) {
             db()->connect([
                 'dbUrl' => static::$config['connections'][static::$config['default']]['url'] ?? null,
-                'dbtype' => static::$config['default'] ?? 'mysql',
+                'dbtype' => static::$config['connections'][static::$config['default']]['driver'] ?? 'mysql',
                 'charset' => static::$config['connections'][static::$config['default']]['charset'] ?? 'utf8mb4',
                 'port' => static::$config['connections'][static::$config['default']]['port'] ?? '3306',
                 'host' => static::$config['connections'][static::$config['default']]['host'] ?? '127.0.0.1',
